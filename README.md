@@ -9,7 +9,7 @@ It instead dumps an unhandled exception because of *'recursive loop detected in 
 
 ## usage
 1. Create and load a Python virtualenv with [ansible.requirements](./ansible.requirements) (I used [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io)).
-1. Run ansible on this repo's root (result *as-is*):
+1. Run ansible on this repo's root against (the test playbook)[./ansible/playbook.yml] (result *as-is*):
    ```console
    (ansible) user@host:~/ansible-issue-69677$ ansible-playbook -i ansible/inventory/ ansible/playbook.yml 
    

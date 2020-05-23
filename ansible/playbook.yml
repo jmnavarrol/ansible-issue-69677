@@ -2,7 +2,15 @@
 - name: "A test for #69677"
   hosts: somegroup
   connection: local
-  
+
+#---
+# PRE-TASKS
+#---
+  pre_tasks:
+  - name: Shows Ansible version
+    debug:
+      msg: "Playbook running Ansible version {{ ansible_version.string }}"
+
 #---
 # TASKS
 #---
