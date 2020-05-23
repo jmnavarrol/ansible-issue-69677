@@ -12,8 +12,8 @@
       msg:
       # these don't work when trying to "overload" these variables' contents
       - "merged_list: {{ merged_list }}"
-      - "different_merged_list: {{ different_merged_list }}"
-      # these do work, but don't cover the requested use-case
       - "merged_dict: {{ merged_dict }}"
+      # these do work, but don't cover the requested use-case
+      - "different_merged_list: {{ different_merged_list }}"
       - "different_merged_dict: {{ different_merged_dict }}"
 
