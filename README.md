@@ -8,7 +8,7 @@ The expectation is for variables **merged_list** and **merged_dict** as defined 
 It instead dumps an unhandled exception because of *'recursive loop detected in template string'*.
 
 ## usage
-1. Create and load a Python virtualenv with [ansible.requirements](./ansible.requirements) (I used [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io).
+1. Create and load a Python virtualenv with [ansible.requirements](./ansible.requirements) (I used [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io)).
 1. Run ansible on this repo's root (result *as-is*):
    ```console
    (ansible) user@host:~/ansible-issue-69677$ ansible-playbook -i ansible/inventory/ ansible/playbook.yml 
