@@ -1,5 +1,0 @@
----
-# these are meant to be "reusable variables"
-
-merged_list: []
-merged_dict: {}

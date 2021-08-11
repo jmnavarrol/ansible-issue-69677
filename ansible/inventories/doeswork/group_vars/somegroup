@@ -1,0 +1,8 @@
+---
+# Merging variables with different names
+example_case: 'DOES WORK'
+
+# This works
+# ...but can't cope with the case of an unkown number of additions that can come from other groups a host may belong to
+different_merged_list: "{{ original_list | union(['another-value']) }}"
+different_merged_dict: "{{ original_dict | combine({ 'another-key': 'another-value' }) }}"

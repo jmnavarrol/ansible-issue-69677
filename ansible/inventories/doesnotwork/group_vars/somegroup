@@ -1,0 +1,7 @@
+---
+# Trying to overload variables
+example_case: 'DOES NOT WORK'
+
+# this doesn't work due to https://github.com/ansible/ansible/issues/69677
+original_list: "{{ original_list | union(['some_other']) }}"
+original_dict: "{{ original_dict | combine({ 'foo': 'foo_value' }) }}"

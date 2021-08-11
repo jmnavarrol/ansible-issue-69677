@@ -1,0 +1,8 @@
+---
+# these are meant to be "reusable variables"
+
+original_list:
+- 'original-value'
+
+original_dict:
+  original-key: 'original-value'

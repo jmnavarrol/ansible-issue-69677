@@ -1,27 +1,42 @@
-# See https://github.com/ansible/ansible/issues/69677
-- name: "A test for #69677"
+- name: 'A test for #69677. See https://github.com/ansible/ansible/issues/69677'
   hosts: somegroup
-  connection: local
-
+  
 #---
 # PRE-TASKS
 #---
   pre_tasks:
-  - name: Shows Ansible version
+  - name: Shows involved versions
     debug:
-      msg: "Playbook running Ansible version {{ ansible_version.string }}"
-
+      msg:
+      - "Python version: '{{ ansible_python_version }}'."
+      - "Ansible version '{{ ansible_version.string }}'."
+      
 #---
 # TASKS
 #---
   tasks:
-  - name: "A test for #69677"
+  # this works, but doesn't cover the requested use-case
+  - block:
+    - name: Original variables
+      debug:
+        msg:
+        - "{{ example_case }}:"
+        - "original list: {{ original_list }}"
+        - "original dict: {{ original_dict }}"
+        
+    - name: Merges inventory variables with different names.
+      debug:
+        msg:
+        - "{{ example_case }}:"
+        - "merged lists: {{ different_merged_list }}"
+        - "merged dicts: {{ different_merged_dict }}"
+    when: example_case == 'DOES WORK'
+    
+  # this does NOT work
+  - name: Tries to overload inventory variables.
     debug:
       msg:
-      # these don't work when trying to "overload" these variables' contents
-      - "merged_list: {{ merged_list }}"
-      - "merged_dict: {{ merged_dict }}"
-      # these do work, but don't cover the requested use-case
-      - "different_merged_list: {{ different_merged_list }}"
-      - "different_merged_dict: {{ different_merged_dict }}"
-
+      - "{{ example_case }}:"
+      - "overloaded list: {{ original_list }}"
+      - "overloaded dict: {{ original_dict }}"
+    when: example_case == 'DOES NOT WORK'
