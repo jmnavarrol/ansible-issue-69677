@@ -21,8 +21,8 @@
       debug:
         msg:
         - "{{ example_case }}:"
-        - "original list: {{ original_list }}"
-        - "original dict: {{ original_dict }}"
+        - "original list: {{ mergeable_list }}"
+        - "original dict: {{ mergeable_dict }}"
         
     - name: Merges inventory variables with different names.
       debug:
@@ -37,6 +37,6 @@
     debug:
       msg:
       - "{{ example_case }}:"
-      - "overloaded list: {{ original_list }}"
-      - "overloaded dict: {{ original_dict }}"
+      - "overloaded list: {{ mergeable_list }}"
+      - "overloaded dict: {{ mergeable_dict }}"
     when: example_case == 'DOES NOT WORK'

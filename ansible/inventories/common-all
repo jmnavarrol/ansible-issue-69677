@@ -1,8 +1,8 @@
 ---
 # these are meant to be "reusable variables"
 
-original_list:
+mergeable_list:
 - 'original-value'
 
-original_dict:
+mergeable_dict:
   original-key: 'original-value'
