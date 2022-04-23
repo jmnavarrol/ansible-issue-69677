@@ -58,7 +58,7 @@ Otherwise is up to you to configure your running environment as you please.
     (ansible-issue-69677) user@host:~/ansible-issue-69677$
     ```
 
-1. **What does NOT work:** Trying to *"overload"* an already existing list/dict (i.e. so different groups can work independently and still share variable results) fails with *recursive loop detected in template string* with. Run [the test playbook](./playbook.yml) along [the FAILING working inventory](./inventories/doesnotwork/) and see the error:
+1. **What does NOT work:** Trying to *"overload"* an already existing list/dict (i.e. so different groups can work independently and still share variable results) fails with *recursive loop detected in template string* with. Run [the test playbook](./playbook.yml) along [the FAILING inventory](./inventories/doesnotwork/) and see the error:
     ```console
     (ansible-issue-69677) user@host:~/ansible-issue-69677$ ansible-playbook -i inventories/doesnotwork/ playbook.yml
     [DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. Current version: 3.7.3 (default, Jan 22 2021, 20:04:44) 
